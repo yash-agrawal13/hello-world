@@ -1,0 +1,33 @@
+pipeline:
+  name: testPipeline
+  identifier: testPipeline
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  stages:
+    - stage:
+        name: Random
+        identifier: Random
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Docker
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: Run
+                  name: Run_1
+                  identifier: Run_1
+                  spec: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: gcTest
+        repoName: hello-world
+        build: <+input>
